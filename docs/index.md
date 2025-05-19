@@ -52,9 +52,8 @@ graph TD
         srv_redis[("Redis<br>(Survey Flags)")]
 
         srv_certbot -.-> srv_nginx
-        Internet -- HTTPS --> srv_nginx
-        srv_nginx --> srv_couchdb
-        srv_nginx --> srv_nodejs
+        srv_nginx <--> srv_couchdb
+        srv_nginx <--> srv_nodejs
         srv_nodejs <--> srv_redis
     end
 
@@ -67,12 +66,12 @@ graph TD
     %% Connections
     radio_tx -- "Sensor Data via RFM95" --> bs_python_radio
 
-    bs_js_ui -- "HTTPS" --> srv_nginx
+    bs_js_ui <-- "HTTPS" --> srv_nginx
 
     srv_nodejs -- "HTTPS" --> twilio
     twilio -- "Push/SMS Notifications" --> EApp
 
-    app_ui -- "HTTPS" --> srv_nginx
+    app_ui <-- "HTTPS" --> srv_nginx
 
     %% Styling (Optional - for better visual distinction if supported well)
     classDef sensor fill:#f9f,stroke:#333,stroke-width:2px;
