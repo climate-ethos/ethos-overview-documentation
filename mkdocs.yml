@@ -1,0 +1,17 @@
+site_name: Ethos Project Overview
+theme:
+  name: material
+  logo: assets/ethos.svg
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  palette:
+    primary: red
+nav:
+  - Overview: index.md
+  - 'Ethos-Server Docs': 'https://github.com/climate-ethos/ethos-server/blob/master/README.md'
+  - 'Ethos-Raspberry-Pi Docs': 'https://github.com/climate-ethos/ethos-raspberry-pi/blob/master/README.md'
+  - 'Ethos-Temperature-Sensor Docs': 'https://github.com/climate-ethos/ethos-raspberry-pi/blob/master/README.md'
+  - 'Publications & News Articles': publications.md
