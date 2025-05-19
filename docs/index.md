@@ -9,10 +9,16 @@ The Ethos Project aims to provide a heat Early Warning System (EWS) for vulnerab
 ![System](assets/system.JPG)
 *Photo of the Ethos system. From left to right: indoor sensor, outdoor sensor, base station, indoor sensor x2.*
 
-## Hardware
-
-TODO
-
 ## Architecture
+
+The project is largely comprised of three main components:
+
+1. Ethos Base Station - This is the heart of the system and is responsible for: receiving transmitted sensor information, processing that information to calculate risk based on user information and forwarding the sensor/risk information to the server.
+2. Ethos Temperature Sensor(s) - These are the individual sensors which read the ambient temperature and relative humidity and transmit that information to the base station using radio communication.
+3. Ethos Server - This receives and stores the user's temperature/humidity data in a database. It is also responsible for sending surveys during heatwaves, as well as storing the survey answers. All stored data is de-identified.
+
+TODO - diagram
+
+## Hardware
 
 TODO
