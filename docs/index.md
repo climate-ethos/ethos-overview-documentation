@@ -17,7 +17,75 @@ The project is largely comprised of three main components:
 2. Ethos Temperature Sensor(s) - These are the individual sensors which read the ambient temperature and relative humidity and transmit that information to the base station using radio communication.
 3. Ethos Server - This receives and stores the user's temperature/humidity data in a database. It is also responsible for sending surveys during heatwaves, as well as storing the survey answers. All stored data is de-identified.
 
-TODO - diagram
+``` mermaid
+graph TD
+    %% External Elements
+    twilio[Twilio]
+
+    %% Ethos-temperature-sensor
+    subgraph ETS [Ethos-temperature-sensor]
+        direction TB
+        sht45[("SHT45 Sensor")]
+        feather_m0["Feather M0 Board<br>(feather_m0.ino)"]
+        radio_tx["RFM95 TX Module<br>(radio.cpp)"]
+
+        sht45 -- Temperature/Humidity --> feather_m0
+        feather_m0 -- Controls & Reads --> radio_tx
+    end
+
+    %% Ethos-base-station
+    subgraph EBS [Ethos-base-station]
+        direction TB
+        bs_python_radio["Python Radio Receiver<br>(python_radio)"]
+        bs_js_ui["JavaScript UI<br>(javascript_ui)"]
+
+        bs_python_radio -- "Heat Risk Data<br>(WebSockets)" --> bs_js_ui
+    end
+
+    %% Ethos-server (Dockerized)
+    subgraph ES [Ethos-server]
+        direction TB
+        srv_nginx["Nginx<br>(Reverse Proxy, SSL Termination)"]
+        srv_certbot["Certbot<br>(SSL Certificates)"]
+        srv_couchdb[("CouchDB<br>(Database)")]
+        srv_nodejs["Node.js Server<br>(Survey Logic, Notifications)"]
+        srv_redis[("Redis<br>(Survey Flags)")]
+
+        srv_certbot -.-> srv_nginx
+        Internet -- HTTPS --> srv_nginx
+        srv_nginx --> srv_couchdb
+        srv_nginx --> srv_nodejs
+        srv_nodejs <--> srv_redis
+    end
+
+    %% Ethos-smartphone-app (Optional)
+    subgraph EApp ["User's smartphone"]
+        direction TB
+        app_ui["Ethos iOS/Android App UI"]
+    end
+
+    %% Connections
+    radio_tx -- "Sensor Data via RFM95" --> bs_python_radio
+
+    bs_js_ui -- "HTTPS" --> srv_nginx
+
+    srv_nodejs -- "HTTPS" --> twilio
+    twilio -- "Push/SMS Notifications" --> EApp
+
+    app_ui -- "HTTPS" --> srv_nginx
+
+    %% Styling (Optional - for better visual distinction if supported well)
+    classDef sensor fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef basestation fill:#ccf,stroke:#333,stroke-width:2px;
+    classDef server_component fill:#9cf,stroke:#333,stroke-width:2px;
+    classDef app fill:#lightgreen,stroke:#333,stroke-width:2px;
+    classDef external fill:#eee,stroke:#333,stroke-width:2px;
+
+    class ETS,sht45,feather_m0,radio_tx sensor;
+    class EBS,bs_python_radio,bs_js_ui basestation;
+    class ES,srv_nginx,srv_certbot,srv_couchdb,srv_nodejs,srv_redis server_component;
+    class EApp,app_ui app;
+```
 
 ## Hardware
 

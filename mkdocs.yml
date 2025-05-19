@@ -15,3 +15,9 @@ nav:
   - 'Ethos Temperature Sensor': 'https://github.com/climate-ethos/ethos-raspberry-pi/blob/master/README.md'
   - 'Ethos Server': 'https://github.com/climate-ethos/ethos-server/blob/master/README.md'
   - 'Publications & News Articles': publications.md
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
