@@ -9,7 +9,7 @@
 | Older Queenslanders’ Behaviours During Hot Weather: Factors Impacting their Heat Response Actions | Xu, Z., Oberai, M., Bach, A., Binniweis, S., Jackman, E., Forbes, C., Baker, S., Phung, D., & Rutherford, S. (2023). Older Queenslanders’ behaviours during hot weather: Factors impacting their heat response actions. *ISEE Conference Abstracts, 2023*, isee.2023.MP-162. https://doi.org/10.1289/isee.2023.MP-162 | [DOI](https://doi.org/10.1289/isee.2023.MP-162) |
 | Towards Improvement of Heatwave Warnings for Older Adults: The Case of Queensland Australia | Oberai, M., Baker, S., Bach, A. J. E., Forbes, C., Jackman, E., Binnewies, S., Xu, Z., Cunningham, S., Nghiem, S., Phung, D., & Rutherford, S. (2024). Towards Improvement of Heatwave Warnings for Older Adults: The Case of Queensland Australia. *Journal of Primary Care & Community Health, 15*, 21501319241286584. https://doi.org/10.1177/21501319241286584 | [DOI](https://doi.org/10.1177/21501319241286584) |
 
-## News Articles
+## News Articles & Media
 
 | Publisher | Title | Link |
 |---|---|---|
