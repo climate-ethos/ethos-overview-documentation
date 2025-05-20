@@ -2,6 +2,12 @@
 
 This site uses MkDocs to generate a documentation website for the Ethos Project. For full MkDocs documentation visit [mkdocs.org](https://www.mkdocs.org).
 
+## Installation
+
+The following command will install the required dependencies (requires Python/PIP):
+
+`pip install mkdocs mkdocs-material mkdocs-multirepo-plugin`
+
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.

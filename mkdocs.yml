@@ -1,4 +1,5 @@
 site_name: Ethos Project Documentation
+
 theme:
   name: material
   logo: assets/ethos.svg
@@ -9,12 +10,28 @@ theme:
     - search.highlight
   palette:
     primary: red
+
+plugins:
+  - multirepo:
+      cleanup: true
+      nav_repos:
+        - name: ethos-base-station
+          import_url: https://github.com/climate-ethos/ethos-base-station
+          imports: [/README.md, /assets]
+        - name: ethos-temperature-sensor
+          import_url: https://github.com/climate-ethos/ethos-temperature-sensor?branch=main
+          imports: [/README.md]
+        - name: ethos-server
+          import_url: https://github.com/climate-ethos/ethos-server?branch=main
+          imports: [/README.md]
+
 nav:
   - Overview: index.md
-  - 'Ethos Base Station': 'https://github.com/climate-ethos/ethos-raspberry-pi/blob/master/README.md'
-  - 'Ethos Temperature Sensor': 'https://github.com/climate-ethos/ethos-raspberry-pi/blob/master/README.md'
-  - 'Ethos Server': 'https://github.com/climate-ethos/ethos-server/blob/master/README.md'
+  - 'Ethos Base Station': 'ethos-base-station/README.md'
+  - 'Ethos Temperature Sensor': 'ethos-temperature-sensor/README.md'
+  - 'Ethos Server': 'ethos-server/README.md'
   - 'Publications & News Articles': publications.md
+
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
