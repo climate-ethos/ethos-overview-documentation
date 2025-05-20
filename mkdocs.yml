@@ -12,6 +12,7 @@ theme:
     primary: red
 
 plugins:
+  - search
   - multirepo:
       cleanup: true
       nav_repos:
