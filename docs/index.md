@@ -89,4 +89,24 @@ graph TD
 
 ## Hardware
 
-TODO
+### Base Station
+
+| Component | Make | Model | SKU | Website/Datasheet |
+|---|---|---|---|---|
+| Processor | RasperryPi | RaspberryPi 4 Model B 4GB | CE06425 | [RaspberryPi Store](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) |
+| Radio Bonnet | Adafruit | LoRa Radio Bonnet with OLED - RFM95W @ 915MHz | 4074 | [Adafruit Store](https://www.adafruit.com/product/4074) |
+| Screen | Waveshare | 8DP-CAPLCD | 23741 | [Waveshare Store](https://www.waveshare.com/8dp-caplcd.htm) |
+| Speakers/Soundcard | Yahboom | USB sound card and speaker for Raspberry Pi/Jetson/RDK series board | 6000301288 | [Yahboom Store](https://category.yahboom.net/products/usb-sound-card) |
+
+### Temperature Sensors
+
+| Component | Make | Model | SKU | Website/Datasheet |
+|---|---|---|---|---|
+| MCU | Adafruit | Feather M0 with RFM95 LoRa Radio | 3178 | [Adafruit Store](https://www.adafruit.com/product/3178) |
+| Sensor | Sensirion/Adafruit | SHT45 | 5665 | [Adafruit Store](https://www.adafruit.com/product/5665) |
+| Battery | PKCELL | Lithium Ion 3.7v 2200mAh | 1781 | [Adafruit Store](https://www.adafruit.com/product/1781) |
+| PCB | Custom built PCB | Designed in house, manufactured with PCBWay | N/A | [PCB Files Here](https://github.com/climate-ethos/ethos-pcb-kicad) |
+
+### Server
+
+We used an Ubuntu VPS server for the project, running Ubuntu 20 hosted with BinaryLane. The server utilized 4VCPUs with 8GB RAM and 100GB disk space.
