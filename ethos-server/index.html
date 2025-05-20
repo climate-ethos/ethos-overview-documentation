@@ -1,0 +1,1360 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ethos-temperature-sensor/">
+      
+      
+        <link rel="next" href="../publications/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Ethos Server - Ethos Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ethos-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Ethos Project Documentation" class="md-header__button md-logo" aria-label="Ethos Project Documentation" data-md-component="logo">
+      
+  <img src="../assets/ethos.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ethos Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ethos Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ethos-base-station/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ethos Base Station
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ethos-temperature-sensor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ethos Temperature Sensor
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ethos Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publications & News Articles
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Ethos Project Documentation" class="md-nav__button md-logo" aria-label="Ethos Project Documentation" data-md-component="logo">
+      
+  <img src="../assets/ethos.svg" alt="logo">
+
+    </a>
+    Ethos Project Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ethos-base-station/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ethos Base Station
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ethos-temperature-sensor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ethos Temperature Sensor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ethos Server
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ethos Server
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nginx-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      NGINX Endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-surveys-to-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sending surveys to clients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation &amp; running
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation &amp; running">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-time-ssl-setup-for-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-Time SSL Setup (for Nginx)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-couchdb-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring CouchDB users
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#survey-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Survey Display
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Survey Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-bom-survey-display-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get BOM Survey Display Status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-bom-survey-display-status-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update BOM Survey Display Status [AUTH]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-user-bom-survey-display-status-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get User BOM Survey Display Status [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-user-bom-survey-display-status-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update User BOM Survey Display Status [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-user-heat-survey-display-status-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get User Heat Survey Display Status [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-user-heat-survey-display-status-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update User Heat Survey Display Status [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Registration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-device-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register Device [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-device-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove Device [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Push Notifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Push Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-alert-push-notification-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send Alert Push Notification [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-survey-push-notification-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send Survey Push Notification [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMS Notifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SMS Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-sms-notification-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send SMS Notification [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Publications & News Articles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nginx-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      NGINX Endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-surveys-to-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sending surveys to clients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation &amp; running
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation &amp; running">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-time-ssl-setup-for-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-Time SSL Setup (for Nginx)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-couchdb-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring CouchDB users
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#survey-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Survey Display
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Survey Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-bom-survey-display-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get BOM Survey Display Status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-bom-survey-display-status-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update BOM Survey Display Status [AUTH]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-user-bom-survey-display-status-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get User BOM Survey Display Status [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-user-bom-survey-display-status-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update User BOM Survey Display Status [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-user-heat-survey-display-status-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get User Heat Survey Display Status [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-user-heat-survey-display-status-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update User Heat Survey Display Status [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Registration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-device-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register Device [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-device-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove Device [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Push Notifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Push Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-alert-push-notification-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send Alert Push Notification [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-survey-push-notification-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send Survey Push Notification [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMS Notifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SMS Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-sms-notification-authdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send SMS Notification [AUTHDB]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ethos-server">Ethos Server</h1>
+<p>This repository stores the setup information needed to run the server for the Ethos project.
+The system uses Nginx for SSL termination and as a reverse proxy, with Certbot for automatic SSL certificate renewal.</p>
+<h2 id="nginx-endpoints">NGINX Endpoints</h2>
+<p>The root path (<code>/</code>) redirects to CouchDB running on port 5984.
+The path (<code>/server/</code>) redirects to the Node.js instance (internally on HTTP port 8080).</p>
+<h2 id="sending-surveys-to-clients">Sending surveys to clients</h2>
+<p>Surveys can be sent to clients by running:
+<code>curl -u user:password -d '{"newValue": true}' -H "Content-Type: application/json" -X POST https://your-domain.com/server/displayBomSurvey</code>
+(Replace <code>user:password</code> with your <code>USERNAME</code> and <code>PASSWORD</code> from <code>.env</code>, and <code>your-domain.com</code> with your actual domain if different).</p>
+<h2 id="installation-running">Installation &amp; running</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ol>
+<li>
+<p><strong>Docker:</strong> This repo requires a pre-existing installation of Docker. Rootless mode is recommended.</p>
+<ul>
+<li>Install Docker: <code>curl -fsSL https://get.docker.com -o get-docker.sh</code> and then <code>sudo sh ./get-docker.sh</code>.</li>
+<li>For rootless Docker (refer to official Docker docs for the most up-to-date instructions):<ol>
+<li>Install prerequisites: <code>sudo apt-get update &amp;&amp; sudo apt-get install -y dbus-user-session uidmap systemd-container fuse-overlayfs</code></li>
+<li>Allow low-port binding for rootless user (e.g., for ports 80, 443): Add <code>net.ipv4.ip_unprivileged_port_start=80</code> to <code>/etc/sysctl.conf</code> then run <code>sudo sysctl -p</code>.</li>
+<li>Create a dedicated user: <code>sudo adduser docker-user</code></li>
+<li>Disable system-wide Docker: <code>sudo systemctl disable --now docker.service docker.socket</code>, <code>sudo rm -f /var/run/docker.sock</code>.</li>
+<li>Log in as the <code>docker-user</code>: <code>sudo machinectl shell docker-user@</code> (or <code>su - docker-user</code>).</li>
+<li>Install rootless Docker: <code>dockerd-rootless-setuptool.sh install</code>.</li>
+<li>Start user Docker service: <code>systemctl --user start docker</code>.</li>
+<li>Enable linger for the user: <code>sudo loginctl enable-linger docker-user</code>.
+More information: <a href="https://docs.docker.com/engine/security/rootless/">Docker Rootless Mode Docs</a></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Node.js Server Configuration:</strong> Ensure your Node.js application (the <code>server</code> service) is configured to listen on <strong>HTTP port 8080</strong>. It should not attempt to handle HTTPS itself.</p>
+</li>
+</ol>
+<h3 id="one-time-ssl-setup-for-nginx">One-Time SSL Setup (for Nginx)</h3>
+<ol>
+<li>
+<p><strong>Generate DH Parameters:</strong> This strengthens SSL. It can take a few minutes.</p>
+<div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>dhparam<span class="w"> </span>-out<span class="w"> </span>./certbot/conf/ssl-dhparams.pem<span class="w"> </span><span class="m">2048</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Configure SSL Options File (<code>./nginx/ssl_common/options-ssl-nginx.conf</code>):</strong>
+    Use a strong configuration. You can generate one from the <a href="https://ssl-config.mozilla.org/">Mozilla SSL Configuration Generator</a>. Select Nginx, your server version, and "Modern" compatibility.
+    Example content for <code>./nginx/ssl_common/options-ssl-nginx.conf</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Modern configuration, tweak as necessary</span>
+<span class="k">ssl_protocols</span><span class="w"> </span><span class="s">TLSv1.2</span><span class="w"> </span><span class="s">TLSv1.3</span><span class="p">;</span>
+<span class="k">ssl_ciphers</span><span class="w"> </span><span class="s">ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384</span><span class="p">;</span>
+<span class="k">ssl_prefer_server_ciphers</span><span class="w"> </span><span class="no">off</span><span class="p">;</span>
+<span class="k">ssl_session_cache</span><span class="w"> </span><span class="s">shared:SSL:10m</span><span class="p">;</span>
+<span class="k">ssl_session_timeout</span><span class="w"> </span><span class="s">1d</span><span class="p">;</span>
+<span class="k">ssl_session_tickets</span><span class="w"> </span><span class="no">off</span><span class="p">;</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="running-the-server">Running the server</h3>
+<ol>
+<li><strong>(If running docker rootless)</strong> Login to your <code>docker-user</code> account: <code>sudo machinectl shell docker-user@</code></li>
+<li>Clone this repository.</li>
+<li>Navigate into the cloned directory.</li>
+<li>Copy <code>.env.example</code> to <code>.env</code> (<code>cp .env.example .env</code>) and fill out all the fields (<code>nano .env</code>).<ul>
+<li>Ensure <code>COUCHDB_ADMIN_USER</code>, <code>COUCHDB_ADMIN_PASSWORD</code>, <code>REDIS_PASSWORD</code>, <code>USERNAME</code>, <code>PASSWORD</code> etc. are set.</li>
+</ul>
+</li>
+<li>Configure <code>./nginx/conf/nginx.conf</code> with your correct domain name for <code>$primary_domain</code>.</li>
+<li>
+<p><strong>Initial Certificate Generation (First Time Only):</strong></p>
+<ul>
+<li>
+<p>Start Nginx temporarily to serve the ACME challenge:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>-p<span class="w"> </span>ethos-server<span class="w"> </span>--profile<span class="w"> </span>prod<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>nginx
+</code></pre></div>
+</li>
+<li>
+<p>Run Certbot to obtain certificates. Replace <code>your-email@example.com</code> with your actual email and <code>your-domain.com</code> with your domain:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>prod<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>certbot<span class="w"> </span>certonly<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--webroot<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--webroot-path<span class="w"> </span>/var/www/certbot/<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>your-domain.com<span class="w"> </span>-d<span class="w"> </span>www.your-domain.com<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--email<span class="w"> </span>your-email@example.com<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--agree-tos<span class="w"> </span>--no-eff-email<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--force-renewal<span class="w"> </span><span class="c1"># Use --force-renewal only if re-running for existing domains and need to force it</span>
+</code></pre></div>
+</li>
+<li>
+<p>If successful, Nginx (which is already running) should now have the certs. You can stop it and restart all services, or just proceed.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Optional: docker compose --profile prod stop nginx</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Start all services (including Nginx with certs, and Certbot for auto-renewal):</strong>
+    The <code>prod_start_server.sh</code> or <code>dev_start_server.sh</code> scripts can handle starting services for you.
+    Alternatively a general command for production:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>-p<span class="w"> </span>ethos-server<span class="w"> </span>--profile<span class="w"> </span>prod<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p><code>-p ethos-server</code> sets a consistent project name which is needed for the certbot entrypoint script to reload nginx</p>
+</li>
+</ol>
+<h3 id="configuring-couchdb-users">Configuring CouchDB users</h3>
+<ol>
+<li>Copy <code>users.csv.example</code> to <code>users.csv</code> and populate the file with usernames and passwords.</li>
+<li>Run <code>sh prod_create_users_from_csv.sh</code> to create CouchDB users and views. This script likely runs a command like <code>docker compose exec couchdb ...</code> or similar.</li>
+</ol>
+<h2 id="api-endpoints">API Endpoints</h2>
+<h3 id="authentication">Authentication</h3>
+<p>All endpoints marked with <code>[AUTH]</code> require authentication using the <code>authMiddleware</code>.</p>
+<p>All endpoints marked with <code>[AUTHDB]</code> require authentication against the couchdb database. The authenticated user's identity must match the <code>identity</code> or <code>userId</code> provided in the request body for applicable endpoints.</p>
+<h3 id="survey-display">Survey Display</h3>
+<h4 id="get-bom-survey-display-status">Get BOM Survey Display Status</h4>
+<ul>
+<li><strong>URL:</strong> <code>/displayBomSurvey</code></li>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Description:</strong> Retrieves the current status of whether to display a BOM survey.</li>
+<li><strong>Response:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;displaySurvey&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="update-bom-survey-display-status-auth">Update BOM Survey Display Status [AUTH]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/displayBomSurvey</code></li>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Description:</strong> Updates the BOM survey display status.</li>
+<li><strong>Body:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;newValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Response:</strong> String confirming the update.</li>
+</ul>
+<h4 id="get-user-bom-survey-display-status-authdb">Get User BOM Survey Display Status [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/displayUserHeatSurvey</code></li>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Description:</strong> Retrieves the current status of whether to display a BOM survey for given user passed in credentials.</li>
+<li><strong>Response:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;displaySurvey&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="update-user-bom-survey-display-status-authdb">Update User BOM Survey Display Status [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/displayUserHeatSurvey</code></li>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Description:</strong> Updates the BOM survey display status of current user passed in credentials.</li>
+<li><strong>Body:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;newValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Response:</strong> String confirming the update.</li>
+</ul>
+<h4 id="get-user-heat-survey-display-status-authdb">Get User Heat Survey Display Status [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/displayUserHeatSurvey</code></li>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Description:</strong> Retrieves the current status of whether to display a Heat Alert survey for given user passed in credentials.</li>
+<li><strong>Response:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;displaySurvey&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="update-user-heat-survey-display-status-authdb">Update User Heat Survey Display Status [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/displayUserHeatSurvey</code></li>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Description:</strong> Updates the Heat Alert survey display status of current user passed in credentials.</li>
+<li><strong>Body:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;newValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Response:</strong> String confirming the update.</li>
+</ul>
+<h3 id="device-registration">Device Registration</h3>
+<h4 id="register-device-authdb">Register Device [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/registerDevice</code></li>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Description:</strong> Registers a device for push notifications. If device is undefined, it will default to iOS. Set tag as 'research_participant' for those users who will be receiving surveys.</li>
+<li><strong>Body:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;identity&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;research_participant&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;device&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;android&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="s2">&quot;ios&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Response:</strong> String confirming registration.</li>
+</ul>
+<h4 id="remove-device-authdb">Remove Device [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/removeDevice</code></li>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Description:</strong> Removes a device for push notifications.</li>
+<li><strong>Body:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;identity&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Response:</strong> String confirming removal.</li>
+</ul>
+<h3 id="push-notifications">Push Notifications</h3>
+<h4 id="send-alert-push-notification-authdb">Send Alert Push Notification [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/sendAlertPushNotification</code></li>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Description:</strong> Sends a heat alert push notification to a registered device.</li>
+<li><strong>Body:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;identity&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;roomName&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="s2">&quot;high&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Response:</strong> String confirming the notification was sent.</li>
+</ul>
+<h4 id="send-survey-push-notification-authdb">Send Survey Push Notification [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/sendSurveyPushNotification</code></li>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Description:</strong> Sends a survey push notification to a registered device.</li>
+<li><strong>Body:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;identity&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;surveyType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;alert&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="s2">&quot;bom&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="s2">&quot;both&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Response:</strong> String confirming the notification was sent.</li>
+</ul>
+<h3 id="sms-notifications">SMS Notifications</h3>
+<h4 id="send-sms-notification-authdb">Send SMS Notification [AUTHDB]</h4>
+<ul>
+<li><strong>URL:</strong> <code>/sendSMSNotification</code></li>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Description:</strong> Sends an SMS notification.</li>
+<li><strong>Body:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;phoneNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;roomName&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="s2">&quot;high&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Response:</strong> String confirming the SMS was sent.</li>
+</ul>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>All authenticated routes require a valid authentication token to be included in the request header.</li>
+<li>For endpoints that require an <code>identity</code> or <code>userId</code> in the request body, this <code>identity</code> must match the authenticated user's identity.</li>
+<li>Error responses will include appropriate HTTP status codes and error messages.</li>
+<li>The <code>sendPushNotification</code> and <code>sendSMS</code> functions are available for use within the application but are not directly exposed as API endpoints.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

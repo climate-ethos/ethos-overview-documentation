@@ -1,0 +1,1457 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../ethos-temperature-sensor/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Ethos Base Station - Ethos Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ethos-base-station" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Ethos Project Documentation" class="md-header__button md-logo" aria-label="Ethos Project Documentation" data-md-component="logo">
+      
+  <img src="../assets/ethos.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ethos Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ethos Base Station
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ethos Base Station
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ethos-temperature-sensor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ethos Temperature Sensor
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ethos-server/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ethos Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publications & News Articles
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Ethos Project Documentation" class="md-nav__button md-logo" aria-label="Ethos Project Documentation" data-md-component="logo">
+      
+  <img src="../assets/ethos.svg" alt="logo">
+
+    </a>
+    Ethos Project Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ethos Base Station
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ethos Base Station
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-settings-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show settings button
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and building
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation and building">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-to-end testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application data structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application data structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data flow diagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weather
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preferences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Survey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alert
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinia-store-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinia store types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pinia store types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-preferences-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Preferences store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-sensor-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Sensor store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-user-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data User store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-time-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date Time store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socket store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#survey-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Survey store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weather store
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ethos-temperature-sensor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ethos Temperature Sensor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ethos-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ethos Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Publications & News Articles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-settings-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show settings button
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and building
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation and building">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-to-end testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application data structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application data structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data flow diagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weather
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preferences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Survey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alert
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinia-store-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinia store types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pinia store types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-preferences-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Preferences store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-sensor-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Sensor store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-user-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data User store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-time-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Date Time store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socket store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#survey-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Survey store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weather store
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ethos-base-station">Ethos Base Station</h1>
+<p>This repository stores the code which is run on the Raspberry Pi for the Ethos in home system trial.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#ethos-base-station">Ethos Base Station</a></li>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#tips">Tips</a><ul>
+<li><a href="#show-settings-button">Show settings button</a></li>
+</ul>
+</li>
+<li><a href="#installation-and-building">Installation and building</a><ul>
+<li><a href="#development-build">Development build</a></li>
+<li><a href="#production-build">Production build</a></li>
+</ul>
+</li>
+<li><a href="#testing">Testing</a><ul>
+<li><a href="#unit-testing">Unit testing</a></li>
+<li><a href="#end-to-end-testing">End-to-end testing</a></li>
+</ul>
+</li>
+<li><a href="#application-data-structure">Application data structure</a><ul>
+<li><a href="#data-flow-diagram">Data flow diagram</a></li>
+<li><a href="#database-types">Database types</a></li>
+<li><a href="#sensor">Sensor</a></li>
+<li><a href="#weather">Weather</a></li>
+<li><a href="#preferences">Preferences</a></li>
+<li><a href="#survey">Survey</a></li>
+<li><a href="#alert">Alert</a></li>
+<li><a href="#pinia-store-types">Pinia store types</a></li>
+<li><a href="#database-store">Database store</a></li>
+<li><a href="#data-preferences-store">Data Preferences store</a></li>
+<li><a href="#data-sensor-store">Data Sensor store</a></li>
+<li><a href="#data-user-store">Data User store</a></li>
+<li><a href="#date-time-store">Date Time store</a></li>
+<li><a href="#keyboard-store">Keyboard store</a></li>
+<li><a href="#socket-store">Socket store</a></li>
+<li><a href="#survey-store">Survey store</a></li>
+<li><a href="#volume-store">Volume store</a></li>
+<li><a href="#weather-store">Weather store</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="tips">Tips</h2>
+<h3 id="show-settings-button">Show settings button</h3>
+<p>To show the settings button, press the ethos logo (top left) 7 times in quick succession.</p>
+<h2 id="installation-and-building">Installation and building</h2>
+<h3 id="development-build">Development build</h3>
+<p>Requirements: <em>NPM, Yarn, Python 3.9 (with venv) and Docker</em></p>
+<ol>
+<li>Ensure Docker is open and running.</li>
+<li>Under <code>./javascript_ui</code> make a file named <code>.env</code> using the provided <code>.env.example</code> file and fill in all variables.</li>
+<li>Run install script <code>sh dev_install.sh</code> (Mac/Linux) or <code>.\dev_install.bat</code> (Windows).</li>
+<li>To run development build run <code>sh dev_run.sh</code> (Mac/Linux) or <code>.\dev_run.bat</code> (Windows).</li>
+<li>For testing, configure a User with ID of <code>999</code> and a password of <code>12345</code></li>
+</ol>
+<p>Note: If you get an error <code>CouchDB did not start in time</code> or <code>Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?</code>, make sure docker is running, either by launching the application or by running <code>sudo systemctl start docker</code> (Linux).</p>
+<h3 id="production-build">Production build</h3>
+<p>Requirements: <em>NPM, Yarn, Python 3.9 (with venv) and Git</em></p>
+<ol>
+<li>Image Raspberry Pi OS to an SD card using <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a>. When setting up the user ensure the name is set to <code>pi</code>. <em>This is important for automatic process startup with systemd</em></li>
+<li>Ensure that existing packages are up to date with <code>sudo apt update &amp;&amp; sudo apt -y upgrade</code></li>
+<li>(If required) Setup waveshare touchscreen divers by following <a href="https://www.waveshare.com/wiki/8inch_DSI_LCD_(C)#Software_Setting">these instructions</a></li>
+<li>Install nvm by using: <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash</code></li>
+<li>Source terminal with <code>source ~/.bashrc</code></li>
+<li>Install node version 18 with <code>nvm install 18</code> and then activate it with <code>nvm use 18</code></li>
+<li>Install Yarn with <code>npm install --global yarn</code></li>
+<li>Ensure that Python is installed with <code>python3 --version</code>, and if not install it</li>
+<li>Navigate to the home directory with either <code>cd ~</code> or <code>cd /home/pi</code></li>
+<li>Clone the GitHub repository with <code>git clone git@github.com:climate-ethos/ethos-raspberry-pi.git</code></li>
+<li>Move into the newly created directory with <code>cd ethos-raspberry-pi</code></li>
+<li>Under <code>./javascript_ui</code> make a file named <code>.env</code> using the provided <code>.env.example</code> file and fill in all variables.</li>
+<li>Make all pi-related scripts executable with the command: <code>find . -maxdepth 1 -type f -name "pi_*.sh" -exec chmod +x {} \;</code></li>
+<li>Install dependencies by running <code>sh pi_install.sh</code> (Pi). This will also setup auto-launch at startup and automatic updates with a cron job.</li>
+<li>Build production binary/Electron app using <code>sh pi_build.sh</code></li>
+<li>Run systemd services with <code>sh pi_run.sh</code> (Pi), or alternatively restart device.</li>
+</ol>
+<p>If this doesn't work you can try a manual launch with <code>pi_run_manual.sh</code> (Pi) for debugging.</p>
+<p><strong>Important:</strong> Ensure that the application is cloned in the home directory (<code>~/ethos-raspberry-pi</code>). Otherwise systemd services will not work. The system has been designed with Python 3.9 and Node 18 so if any errors arise check the versions of those two services first.</p>
+<h2 id="testing">Testing</h2>
+<h3 id="unit-testing">Unit testing</h3>
+<p>Requirements: <em>NPM, Yarn and Python 3.9 (with venv)</em></p>
+<ol>
+<li>Run executable with <code>sh dev_tests_unit.sh</code> (Mac/Linux)</li>
+</ol>
+<h3 id="end-to-end-testing">End-to-end testing</h3>
+<p>Requirements: <em>NPM, Yarn, Python 3.9 (with venv) and Docker</em></p>
+<ol>
+<li>Run executable with <code>sh dev_tests_e2e.sh</code> (Mac/Linux).</li>
+</ol>
+<h2 id="application-data-structure">Application data structure</h2>
+<h3 id="data-flow-diagram">Data flow diagram</h3>
+<p><img alt="ethos-data-flow" src="assets/ethos-data-flow.svg" /></p>
+<p>Each data type shown in the diagram is explained below:</p>
+<h3 id="database-types">Database types</h3>
+<p>Definitions for the structure can be found in <code>javascript_ui/src/typings/database-types.d.ts</code>. The database is used to store historical data which may be useful for research purposes. Each row in the database corresponds to a historical record of one of the following types:</p>
+<h4 id="sensor">Sensor</h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ype</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;se</span><span class="kc">ns</span><span class="err">or&#39;;</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ime</span><span class="p">:</span><span class="w"> </span><span class="err">Da</span><span class="kc">te</span><span class="err">;</span>
+<span class="w">  </span><span class="err">userId</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g;</span>
+<span class="w">  </span><span class="err">se</span><span class="kc">ns</span><span class="err">orLoca</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d;</span>
+<span class="w">  </span><span class="err">se</span><span class="kc">ns</span><span class="err">orId</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d;</span>
+<span class="w">  </span><span class="kc">te</span><span class="err">mpera</span><span class="kc">ture</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d;</span>
+<span class="w">  </span><span class="err">humidi</span><span class="kc">t</span><span class="err">y</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d;</span>
+<span class="w">  </span><span class="err">coreTempera</span><span class="kc">ture</span><span class="err">Del</span><span class="kc">ta</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="weather">Weather</h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ype</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;wea</span><span class="kc">t</span><span class="err">her&#39;;</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ime</span><span class="p">:</span><span class="w"> </span><span class="err">Da</span><span class="kc">te</span><span class="err">;</span>
+<span class="w">  </span><span class="err">userId</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g;</span>
+<span class="w">  </span><span class="err">wea</span><span class="kc">t</span><span class="err">herLoca</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">null</span><span class="err">;</span>
+<span class="w">  </span><span class="kc">te</span><span class="err">mpera</span><span class="kc">ture</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">null</span><span class="err">;</span>
+<span class="w">  </span><span class="err">humidi</span><span class="kc">t</span><span class="err">y</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">null</span><span class="err">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="preferences">Preferences</h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ype</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;pre</span><span class="kc">feren</span><span class="err">ces&#39;;</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ime</span><span class="p">:</span><span class="w"> </span><span class="err">Da</span><span class="kc">te</span><span class="err">;</span>
+<span class="w">  </span><span class="err">userId</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g;</span>
+<span class="w">  </span><span class="err">audioType</span><span class="p">:</span><span class="w"> </span><span class="err">AudioType;</span>
+<span class="w">  </span><span class="err">isFollowUp</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span><span class="err">;</span>
+<span class="w">  </span><span class="err">cooli</span><span class="kc">n</span><span class="err">gS</span><span class="kc">trate</span><span class="err">gyOp</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="p">:</span><span class="w"> </span><span class="err">Array&lt;</span><span class="p">{</span>
+<span class="w">    </span><span class="err">key</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g;</span>
+<span class="w">    </span><span class="err">haveAccessTo</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span><span class="err">;</span>
+<span class="w">    </span><span class="err">wouldUse</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span><span class="err">;</span>
+<span class="w">    </span><span class="err">whyNo</span><span class="kc">t</span><span class="err">Use</span><span class="p">:</span><span class="w"> </span><span class="err">Array&lt;s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g&gt;;</span>
+<span class="w">    </span><span class="err">whyNo</span><span class="kc">t</span><span class="err">UseO</span><span class="kc">t</span><span class="err">her</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g;</span>
+<span class="w">  </span><span class="p">}</span><span class="err">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="survey">Survey</h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ype</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;survey&#39;;</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ime</span><span class="p">:</span><span class="w"> </span><span class="err">Da</span><span class="kc">te</span><span class="err">;</span>
+<span class="w">  </span><span class="err">userId</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g;</span>
+<span class="w">  </span><span class="err">wasHome</span><span class="p">:</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span><span class="err">;</span>
+<span class="w">  </span><span class="err">cooli</span><span class="kc">n</span><span class="err">gS</span><span class="kc">trate</span><span class="err">giesUsed</span><span class="p">:</span><span class="w"> </span><span class="err">Array&lt;s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g&gt;;</span>
+<span class="w">  </span><span class="err">howE</span><span class="kc">ffe</span><span class="err">c</span><span class="kc">t</span><span class="err">ive</span><span class="p">:</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="alert">Alert</h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ype</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aler</span><span class="kc">t</span><span class="err">&#39;;</span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ime</span><span class="p">:</span><span class="w"> </span><span class="err">Da</span><span class="kc">te</span><span class="err">;</span>
+<span class="w">  </span><span class="err">userId</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g;</span>
+<span class="w">  </span><span class="err">riskLevel</span><span class="p">:</span><span class="w"> </span><span class="err">RiskLevel</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">de</span><span class="kc">f</span><span class="err">i</span><span class="kc">ne</span><span class="err">d;</span>
+<span class="w">  </span><span class="err">volumePerce</span><span class="kc">nt</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber;</span>
+<span class="w">  </span><span class="err">dismissMe</span><span class="kc">t</span><span class="err">hod</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">&#39;</span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">here&#39;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">&#39;cooli</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">s</span><span class="kc">trate</span><span class="err">gies&#39;</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">&#39;dismiss&#39;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="pinia-store-types">Pinia store types</h3>
+<p>This is the structure of the state which is stored in the pinia store. The pinia store is used for live data which directly affects the UI or application logic.</p>
+<h4 id="database-store">Database store</h4>
+<p>The database store is designed to provide centralized access and actions related to a PouchDB database and its replication to a CouchDB instance.</p>
+<ul>
+<li>
+<p><code>db</code>: Holds the instance of the PouchDB local database.</p>
+</li>
+<li>
+<p><code>replicationHandler</code>: Holds the replication handler instance, which is responsible for replicating the PouchDB instance to a remote CouchDB database.</p>
+</li>
+<li>
+<p><code>replicationStatus</code>: Provides the current status of the replication process. Can be one of the following values:</p>
+</li>
+<li><code>initial</code></li>
+<li><code>active</code></li>
+<li><code>paused</code></li>
+<li><code>denied</code></li>
+<li><code>complete</code></li>
+<li><code>error</code></li>
+</ul>
+<h4 id="data-preferences-store">Data Preferences store</h4>
+<p>The Data Preferences store manages user preferences related to audio types, follow-up settings, and cooling strategy options.</p>
+<ul>
+<li>
+<p><code>audioType</code>: Specifies the type of audio that will be used. It can be one of the enumerated values from <code>AudioType</code> (e.g., <code>AudioType.TONE</code>).</p>
+</li>
+<li>
+<p><code>isFollowUp</code>: A boolean flag to indicate if the user wishes to follow up with a focus group discussion.</p>
+</li>
+<li>
+<p><code>coolingStrategyOptions</code>: An array of objects representing the various cooling strategies. Each object contains a key, which is the identifier for the strategy, and several other options like <code>haveAccessTo</code> and <code>wouldUse</code>.</p>
+</li>
+</ul>
+<p>The <code>coolingStrategyOptions</code> array is generated dynamically based on keys from the <code>coolingStrategies</code> helper, and each strategy option object is set to default values as defined in <code>defaultOptions</code>.</p>
+<h4 id="data-sensor-store">Data Sensor store</h4>
+<p>The Data Sensor store is designed to manage sensor data, including alert states and other sensor-related metrics.</p>
+<ul>
+<li>
+<p><code>alertSensor</code>: Holds the sensor data for the current alert. It is of type <code>SensorData</code> which includes fields like <code>id</code>, <code>name</code>, <code>temperature</code>, etc.</p>
+</li>
+<li>
+<p><code>allSensorData</code>: An array that contains objects of type <code>SensorData</code>. Each object holds information about a sensor including its <code>id</code>, <code>name</code>, <code>temperature</code>, <code>humidity</code>, <code>lastSeen</code>, <code>coreTemperatureDelta</code>, and <code>riskLevel</code>.</p>
+</li>
+<li><code>id</code>: Sensor identification number.</li>
+<li><code>name</code>: Sensor name (in this case where it is located).</li>
+<li><code>temperature</code>: Current temperature data from the sensor (in degrees Celsius).</li>
+<li><code>humidity</code>: Current humidity data from the sensor (relative humidity).</li>
+<li><code>lastSeen</code>: The most recent time the sensor was active.</li>
+<li><code>coreTemperatureDelta</code>: Calculated change of core temperature from baseline, using the JOS-3 model.</li>
+<li><code>riskLevel</code>: Calculated risk level based on core temperature.</li>
+</ul>
+<p>The <code>allSensorData</code> array is initialized with four sensor objects, each having their fields set to <code>undefined</code>.</p>
+<h4 id="data-user-store">Data User store</h4>
+<p>The Data User store is designed to manage user-related data, such as geographic location, biometric details, and sex. This is used for calculating core temperature.</p>
+<ul>
+<li><code>id</code>: Holds the ID of the user which is used to connect to the database and store info</li>
+<li><code>password</code>: Stores the password for the associated user ID to connect tot the database</li>
+<li>
+<p><code>postcode</code>: Holds the postcode of the user.</p>
+</li>
+<li>
+<p><code>latitude</code>: Holds the latitude coordinate corresponding to the user's postcode.</p>
+</li>
+<li>
+<p><code>longitude</code>: Holds the longitude coordinate corresponding to the user's postcode.</p>
+</li>
+<li>
+<p><code>ageYears</code>: Holds the age of the user in years.</p>
+</li>
+<li>
+<p><code>heightCm</code>: Holds the height of the user in centimetres.</p>
+</li>
+<li>
+<p><code>weightKg</code>: Holds the weight of the user in kilograms.</p>
+</li>
+<li>
+<p><code>sex</code>: Holds the sex of the user. Can be either: 'female', 'male' or 'other'.</p>
+</li>
+</ul>
+<h4 id="date-time-store">Date Time store</h4>
+<p>The Date Time store is designed to manage date and time-related data. It updates this data periodically.</p>
+<ul>
+<li><code>currentDate</code>: Holds the current date and time as a JavaScript <code>Date</code> object.</li>
+</ul>
+<h4 id="keyboard-store">Keyboard store</h4>
+<p>The Keyboard store is designed to manage the virtual keyboard behavior and settings in the application. This includes what input the keyboard is bound to, its current value, type, and dimensions.</p>
+<ul>
+<li>
+<p><code>keyboardBinding</code>: Holds the HTMLInputElement that the keyboard is currently bound to. Used to refocus the input. Can be either <code>undefined</code> or an instance of <code>HTMLInputElement</code>.</p>
+</li>
+<li>
+<p><code>keyboardValue</code>: Holds the value to which the keyboard is currently bound. Can be either <code>undefined</code> or an object with a <code>value</code> property of type <code>string</code>.</p>
+</li>
+<li>
+<p><code>keyboardType</code>: Specifies the type of the keyboard. Can be either <code>'text'</code> or <code>'number'</code>.</p>
+</li>
+<li>
+<p><code>keyboardHeight</code>: Holds the height of the keyboard in pixels. Can be either <code>undefined</code> or a <code>number</code>.</p>
+</li>
+</ul>
+<h4 id="socket-store">Socket store</h4>
+<p>The Socket store is designed to manage the real-time communication between the client and the server using Socket.io. This includes tracking the state of the connection and the socket instance itself.</p>
+<ul>
+<li>
+<p><code>isConnected</code>: A boolean flag that indicates whether the socket connection is currently established. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><code>socket</code>: Holds the instance of the Socket.io client connected to the server. This is the socket that is responsible for emitting and listening to real-time events. Can be either <code>null</code> or an instance of <code>Socket&lt;ServerToClientEvents, ClientToServerEvents&gt;</code>.</p>
+</li>
+</ul>
+<h4 id="survey-store">Survey store</h4>
+<p>The Survey store is designed to manage the user survey data and logic. This includes tracking the number of alerts that have occurred since the last survey, storing the user's answers to the survey questions, and determining whether the survey modal should be displayed.</p>
+<ul>
+<li>
+<p><code>alertsSinceLastSurvey</code>: An integer that keeps track of the number of alerts that have occurred since the last survey was displayed. Starts from 0.</p>
+</li>
+<li>
+<p><code>alertsInLastTimePeriod</code>: An integer that holds the number of alerts that have occurred in the last specified time period. This is used to display the number of alerts to the user when showing the survey.</p>
+</li>
+<li>
+<p><code>isShowSurveyModal</code>: A boolean flag that indicates whether the survey modal should be shown. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><code>surveyAnswers</code>: An object that holds the user's answers to the survey questions. It follows the structure of <code>SurveyDatabaseStructure</code>, and includes:</p>
+</li>
+<li><code>wasHome</code>: Can be either <code>undefined</code> or a boolean indicating whether the user was home.</li>
+<li><code>coolingStrategiesUsed</code>: An array that stores the cooling strategies used by the user.</li>
+<li><code>howEffective</code>: Can be either <code>undefined</code> or a value indicating how effective the cooling strategies were.</li>
+</ul>
+<h4 id="volume-store">Volume store</h4>
+<p>The Volume store is designed to manage the volume settings in the application. This includes tracking the current volume value and providing the capability to increase or decrease it.</p>
+<ul>
+<li><code>volumeValue</code>: An integer that holds the current value of the volume. This value is bounded between 0 and <code>maxVolume</code> (5 by default).</li>
+</ul>
+<h4 id="weather-store">Weather store</h4>
+<p>The Weather store is designed to manage the weather-related data and forecast for the user. It provides functionalities like fetching current weather conditions and detailed forecasts based on the user's latitude and longitude.</p>
+<ul>
+<li>
+<p><code>isShowDetailedForecast</code>: A boolean value indicating whether to show the detailed forecast modal or not.</p>
+</li>
+<li>
+<p><code>errorMessage</code>: A string that holds any error message generated during the data fetching process. Initially set to 'Updating data...'.</p>
+</li>
+<li>
+<p><code>stationName</code>: A string or null that holds the name of the weather station from where the weather data is fetched.</p>
+</li>
+<li>
+<p><code>currentTemp</code>: A number or null that holds the current temperature in metric units.</p>
+</li>
+<li>
+<p><code>currentHumidity</code>: A number or null that holds the current humidity level.</p>
+</li>
+<li>
+<p><code>weatherDescription</code>: A string or undefined that holds a textual description of the current weather conditions, e.g., "clear sky".</p>
+</li>
+<li>
+<p><code>weatherIconId</code>: A string or null that holds the icon ID for the current weather conditions. This ID is used to display the corresponding weather icon.</p>
+</li>
+<li>
+<p><code>forecastTemps</code>: An array of objects or null that holds the detailed forecast data. Each object contains the <code>date</code> (as a JavaScript Date object) and the <code>temperature</code> (as a number in metric units).</p>
+</li>
+<li>
+<p><code>pollInterval</code>: A number or null that specifies the current interval to update weather</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
